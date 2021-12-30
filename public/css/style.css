@@ -61,6 +61,17 @@ a {
     border-radius: 5px;
 }
 
+a:hover {
+    margin: 10px;
+    color: white;
+    border: 1px solid black;
+    text-decoration: none;
+    padding: 5px 7.5px;
+    padding-left: 8.3px;
+    background-color: rgb(82, 37, 37);
+    border-radius: 5px;
+}
+
 .answers {
     box-sizing: border-box;
     margin: 10px;
