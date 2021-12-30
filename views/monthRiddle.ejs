@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CORRECT!!</h1>
+    <br>
+    <div>Now for the second riddle!</div>
+    <br>
+    <div class="smallRiddle">How many months in a year have 29 days?</div>
+    <div class = answers>
+        <% btnArr.forEach( (el, i)=> {%>
+            <a href="<%= routeArr[i]%>">
+                <%=el%>
+            </a>
+            <% }) %>
+    </div>
+</body>
+</html>

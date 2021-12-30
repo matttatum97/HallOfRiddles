@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to the Hall of Riddles</h1>
+    <br>
+    <div class = "instruct">
+        In order to proceed you must type the answer
+        to the following riddle as the next prition of
+        the route. If you guess correctly you will be
+        takent to the next riddle. Guess incorrect and 
+        you will be lead to a differnt page giving you 
+        another chance. Ready? Here is your first riddle!
+    </div>
+    <br>
+    <h2>Riddle One!</h2>
+    <div class = "riddle">
+        There are ten apples on a table. You take two,
+        your frind takes five and your other friend
+        takes one. How many apples do you have?
+    </div>
+    <br>
+    <div class = answers>
+        <% btnArr.forEach( (el, i)=> {%>
+            <a href="<%= routeArr[i]%>">
+                <%=el%>
+            </a>
+            <% }) %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CORRECT</h1>
+    <br>
+    <div>Now for the third riddle!</div>
+    <br>
+    <img src="https://4.bp.blogspot.com/-5f2NPtEMVWw/WZcY77ZMl7I/AAAAAAAAOng/cQxvBKGyrNQEYrpUULfvjd6LjW5S4ommgCLcBGAs/s640/4menwithhats.png">
+    <br>
+    <div class = "longRiddle">Four prisoners are given the opportunity of release and freedom if just one of them can work out the answer to a simple logic riddle. However, if they take part and one of them gives a wrong answer, or none of them can work out the answer at all, then their sentences will be doubled.
+        <br><br>
+        They are told that there are four hats. Two white and two black. Each man will have a hat placed on his head while blindfolded. When each man is wearing a hat the blindfolds will be removed. The prisoners will not be able to see their own hats and the only way they can work out what colour hat they are wearing will be from looking at the hats the other prisoners are wearing. All they have to do to win their freedom is for one of them to work out what colour hat he is wearing.
+        <br><br>
+        But there's a twist. To make it more interesting three prisoners stand in a line facing a brick wall. The prisoner at the back, A, stands on a box and can see both of the prisoners in front of him, B and C. Prisoner B stands on a smaller box and can only see prisoner C, who in turn can only see the wall. The fourth prisoner, D, stands on the other side of the wall and can see nothing of the other prisoners nor his own hat. They are not allowed to turn around, or converse in any way.
+        <br><br>
+        The prisoners are told that they have five minutes and to call out as soon as one of them thinks he knows for certain what colour hat he is wearing. But remember, if just one of them gets the answer wrong they will all have their sentences doubled.
+        <br><br>
+        Within the time allowed one prisoner calls out the right answer. Can you guess which one, what colour hat he is wearing and how he knew for sure?
+        <br><br>
+        For your answer simply give the number of the person who figured it out.
+    </div>
+
+    <div class = answers>
+        <% btnArr.forEach( (el, i)=> {%>
+            <a href="<%= routeArr[i]%>">
+                <%=el%>
+            </a>
+            <% }) %>
+    </div>
+</body>
+</html>
