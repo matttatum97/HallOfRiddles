@@ -8,10 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Congradulations!</h1>
+    <h1>CORRECT!!</h1>
     <br>
-    <h3>You've Complete the Hallway of Riddles. Come back again and there may be more!</h3>
+    <div>Now for the fourth riddle!</div>
     <br>
-    <a href="/">Start Over</a>
+    <div class="smallRiddle">What is 3/7 chicken, 2/3 cat, and 2/4 goat?</div>
+    <div class = answers>
+        <% btnArr.forEach( (el, i)=> {%>
+            <a href="<%= routeArr[i]%>">
+                <%=el%>
+            </a>
+            <% }) %>
+    </div>
 </body>
 </html>

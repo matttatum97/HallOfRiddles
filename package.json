@@ -1,4 +1,6 @@
-{
+{ "engines" : {
+   "node": "16.13.1" 
+  },
   "name": "riddleroutegame",
   "version": "1.0.0",
   "description": "",

@@ -42,7 +42,10 @@ app.get("/2/:wrong", (req, res) => {
 })
 
 app.get("/2/12/2", (req, res) => {
-    res.render("correctComplete")
+    res.render("fractionRiddle", {
+        btnArr: ["Childbirth", "Chiffon", "Chicago", "Chipmunk"],
+        routeArr: ["/2/12/2/Childbirth", "/2/12/2/Chiffon", "/2/12/2/Chicago", "/2/12/2/Chipmunk",]
+    })
 })
 
 app.get("/2/12/:wrong", (req, res) => {
@@ -50,6 +53,18 @@ app.get("/2/12/:wrong", (req, res) => {
     res.render("wrongAnswer", {
         wrongAnswer: wrong,
         goBack: "/2/12"
+    });
+})
+
+app.get("/2/12/2/Chicago", (req, res) => {
+    res.render("correctComplete")
+})
+
+app.get("/2/12/2/:wrong", (req, res) => {
+    const wrong = req.params["wrong"];
+    res.render("wrongAnswer", {
+        wrongAnswer: wrong,
+        goBack: "/2/12/2"
     });
 })
 

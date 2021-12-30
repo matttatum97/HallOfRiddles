@@ -31,15 +31,19 @@ body {
 
 .riddle {
     font-style: italic;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .smallRiddle {
     font-style: italic;
+    margin-bottom: 10px;
 }
 
 .longRiddle {
     width: 70vw;
     font-style: italic;
+    margin-bottom: 10px;
 }
 
 .instruct {
