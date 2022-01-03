@@ -1,13 +1,12 @@
 const express = require("express");
 const session = require('express-session');
-const querystring = require('querystring')
 const app = express();
 const port = process.env.PORT || "3400";
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json()) //To parse the incoming requests with JSON payloads
 
-
+console.log("made it")
 
 app.use(session({
   secret: 'random string',
@@ -21,7 +20,7 @@ app.set("view engine", "ejs")
 app.get("/", (req, res) => {
     let user = "";
     let punctuation = "";
-    let invalid_login = false
+    let invalid_login = false;
 
     invalid_login = req.query.reason || null;
 
@@ -52,6 +51,7 @@ app.post('/signup', (req, res) => {
 
     if (found_user) {
         req.session.username = user;
+        req.session.numOfTries = 1
         res.redirect("/welcomeRiddle")
     } else {
         req.session.destroy(() => {
@@ -83,6 +83,7 @@ app.get("/2", (req, res) => {
 
 app.get("/:wrong", (req, res) => {
     if (req.session && req.session.username) {
+        req.session.numOfTries += 1
         const wrong = req.params["wrong"];
         res.render("wrongAnswer", {
         wrongAnswer: wrong,
@@ -105,6 +106,7 @@ app.get("/2/12", (req, res) => {
 
 app.get("/2/:wrong", (req, res) => {
     if (req.session && req.session.username) {
+        req.session.numOfTries += 1
         const wrong = req.params["wrong"];
         res.render("wrongAnswer", {
         wrongAnswer: wrong,
@@ -126,6 +128,7 @@ app.get("/2/12/2", (req, res) => {
 
 app.get("/2/12/:wrong", (req, res) => {
     if (req.session && req.session.username) {
+        req.session.numOfTries += 1
         const wrong = req.params["wrong"];
         res.render("wrongAnswer", {
         wrongAnswer: wrong,
@@ -137,13 +140,17 @@ app.get("/2/12/:wrong", (req, res) => {
 
 app.get("/2/12/2/Chicago", (req, res) => {
     if (req.session && req.session.username) {
-        res.render("correctComplete")
+        totalTries = req.session.numOfTries
+        res.render("correctComplete", {
+            totalTries: totalTries
+        })
     }
     
 })
 
 app.get("/2/12/2/:wrong", (req, res) => {
     if (req.session && req.session.username) {
+        req.session.numOfTries += 1
         const wrong = req.params["wrong"];
         res.render("wrongAnswer", {
         wrongAnswer: wrong,
@@ -159,3 +166,6 @@ app.listen(port, () => {
 })
 
 app.use(express.static(__dirname + '/public'));
+
+
+
